@@ -1,0 +1,17 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class="container col-lg-3 text-white p-4" style="background-color: #4b4b4b; color: #ffffff;">
+    <div class="login-form">
+      <h2 class="text-left mb-4 text-white">Zresetuj hasło</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">E-mail</label>
+          <input type="text" class="form-control" id="username" placeholder="Wprowadź email">
+        </div> 
+        <button type="submit" class="btn btn-primary btn-block mt-4">Zresetuj</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock content %}

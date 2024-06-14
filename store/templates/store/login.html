@@ -1,0 +1,27 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class="container col-lg-3 text-white p-4" style="background-color: #4b4b4b; color: #ffffff;">
+    <div class="login-form">
+      <h2 class="text-left mb-4 text-white">Zaloguj się</h2>
+      <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="form-group">
+          <label for="username">Nazwa użytkownika</label>
+          {{ form.username }}
+          {{ form.username.errors }}
+        </div>
+        <div class="form-group">
+          <label for="password">Hasło</label>
+          {{ form.password }}
+          {{ form.password.errors }}
+        </div>
+        <p><a href="{% url 'passreset' %}">Nie pamiętasz hasła? Zresetuj je tutaj</a></p>
+        <p><a href="{% url 'register' %}">Nie posiadasz konta? Dołącz do nas!</a></p>
+        <button type="submit" class="btn btn-primary btn-block">Zaloguj</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock content %}

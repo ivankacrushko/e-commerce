@@ -1,0 +1,15 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<script>
+  // Przekierowanie na stronę główną po 5 sekundach
+  setTimeout(function() {
+      window.location.href = "{% url 'store' %}";
+  }, 5000);
+</script>
+
+<div class="container col-lg-6 text-white p-4" style="background-color: #4b4b4b; color: #ffffff;">
+  <h1 style="color: #ffffff;">Za 5 sekund nastąpi wylogowanie...</h1>
+  </div>
+
+{% endblock content %}

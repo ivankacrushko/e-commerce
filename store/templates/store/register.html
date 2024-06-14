@@ -1,0 +1,50 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class="container col-lg-3 text-white p-4" style="background-color: #4b4b4b; color: #ffffff;">
+
+
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6">
+          <label for="fname" class="form-label">Imię</label>
+          {{ form.first_name }}
+        </div>
+        <div class="col-md-6">
+          <label for="lname" class="form-label">Nazwisko</label>
+          {{ form.last_name }}
+        </div>
+        <div class="col-12">
+          <label for="username" class="form-label">Nazwa użytkownika</label>
+          {{ form.username }}
+        </div>
+        <div class="col-12">
+          <label for="email" class="form-label">E-mail</label>
+          {{form.email}}
+        </div>
+        <div class="col-12">
+          <label for="password" class="form-label">Hasło</label>
+          {{form.password1}}
+        </div>
+        <div class="col-12">
+          <label for="confirm password" class="form-label">Potwierdz hasło</label>
+          {{form.password2}}
+        </div>       
+
+      </div>
+      <button type="submit" class="btn btn-primary btn-block mt-4">Rejestracja</button>
+      <p><a href="{% url 'login' %}">Posiadasz konto? Zaloguj się tutaj</a></p>
+    </form>
+
+
+
+</div>
+
+{% endblock content %}
+
+<h2 class="text-left mb-4 text-white">Rejestracja</h2>
+
+<button type="submit" class="btn btn-primary btn-block mt-4">Rejestracja</button>
+<p><a href="{% url 'login' %}">Posiadasz konto? Zaloguj się tutaj</a></p>
